@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .sombra{
+            border: 1px solid black;
+            width: fit-content;
+            box-shadow: 1px 1px 1px black;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript</h1>
+    <div>
+      <p class="cuadro">Hola don Pepito</p>
+    </div>
+    <form action="">
+      <input
+        type="text"
+        name="Nombre"
+        id="NombreInput"
+        placeholder="Ingresa tu nombre..."
+        value="Paco"
+      />
+      <div class="texto">
+
+      </div>
+    </form>
+    <script>
+      console.log("Hola consola"); //Escribir en la consola (depurar)
+      document.write("Hola documento"); //Escribir en el documento
+      let miNombre = "David"; //Crear variable
+      console.log(miNombre); //Escribir variable n consola
+      miNombre = "Pepa"; //Cambiar contenido de la variable, ya no es David, ahora es Pepa
+      document.write(miNombre);
+      const miNombreConst = "David para siempre"; //Const para hacer que una variable sea fija, no puede variar
+      // (miNombreConst="No cambio") Esta linea de código dará error, porque const no permite que lo cambie
+      const miDiv = document.querySelector(".cuadro");
+      console.log(miDiv.innerHTML); //Aquí visualizamos el contenido que hay dentro del div, porque innerHTML hace eso
+      miDiv.classList.add("sombra"); //Añadir la clase sombra a la variable miDiv
+      miDiv.classList.remove("cuadro"); //Eliminar la clase cuadro a la variable miDiv
+      miDiv.innerHTML = "Hola don José";
+      const inputNombre = document.querySelector("#NombreInput");
+      console.log(inputNombre.placeholder);
+      inputNombre.value ="";
+      function saludar(saludo){
+        console.log(saludo)
+      }
+      saludar("Hola")
+      saludar("Jason Duval")
+      miDiv.addEventListener("click", contador)
+      let cuenta=0
+      function contador(){
+        console.log("cuenta vale: " + cuenta)
+        cuenta=cuenta+1
+      }
+
+      let texto=".texto"
+      inputNombre.addEventListener("change", escribir)
+      function escribir(){
+        console.log()
+        texto.innerHTML = inputNombre.value
+      }
+    </script>
+  </body>
+</html>

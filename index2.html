@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input
+        type="text"
+        name="Nombre"
+        id="nombreInput"
+        placeholder="Ingresa tu nombre..."
+        value="ejemplo"
+      />
+    </form>
+    <div class="texto" id="resultado">aqui ira el texto</div>
+    <script>
+      const inputNombre = document.querySelector("#nombreInput");
+
+      console.log(inputNombre.value);
+      let divTexto = document.querySelector("#resultado");
+
+      console.log(divTexto.innerHTML);
+
+      inputNombre.addEventListener("input", escribir);
+
+      function escribir() {
+        console.log("Hola");
+        divTexto.innerHTML = inputNombre.value;
+      }
+    </script>
+  </body>
+</html>
