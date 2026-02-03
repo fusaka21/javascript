@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Web con Lenis.js</title>
+
+  <!-- Lenis.js CDN -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      overflow: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hint {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="s1">Bienvenido a Montblanc Textil</section>
+  <section class="s2">Scroll suave con Lenis.js</section>
+  <section class="s3">Disfruta del efecto</section>
+
+  <div class="hint">Desplázate hacia abajo</div>
+
+  <script>
+    // Inicialización de Lenis
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true
+    });
+
+    const sections = document.querySelectorAll('section');
+
+    function animateSections(scrollPos) {
+      const windowHeight = window.innerHeight;
+      sections.forEach(sec => {
+        const offset = sec.offsetTop;
+        if (scrollPos + windowHeight * 0.75 > offset) {
+          sec.classList.add('visible');
+        }
+      });
+    }
+
+    function raf(time) {
+      lenis.raf(time);
+      animateSections(lenis.scroll); // usar lenis.scroll en lugar de window.scrollY
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  </script>
+
+</body>
+</html>
