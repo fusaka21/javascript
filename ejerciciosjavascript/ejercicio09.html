@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 9</title>
+    <style>
+      body {
+        justify-items: center;
+      }
+
+      .destacado{
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejercicio 9</h1>
+    <div id="contenido">
+        Haz click para cambiar el color
+    </div>
+    <script>
+        const miDiv = document.querySelector("#contenido")
+        console.log(miDiv.classList)
+        function cambioFondo() {
+            //toggle es invertir l'opció, és a dir, si té la classe li treu, si no la té la posa
+            miDiv.classList.toggle("destacado")
+            console.log(miDiv.classList)
+        }
+        document.addEventListener("click", cambioFondo)
+    </script>
+  </body>
+</html>
