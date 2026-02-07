@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 7</title>
+    <style>
+        #contenido{
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: rgb(96, 96, 245);
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            align-content: center;
+        }
+    </style>
 </head>
 <body>
     <div id="contenido">
-
+        Fes click per començar
     </div>
     <script>
-        let comptador = document.querySelector("#contenido")
+        const div = document.querySelector("#contenido");
+        let contador = 0;
+
+        function incrementar() {
+            contador = contador + 1;
+            div.innerHTML = "Nº de clicks: " + contador;
+        }
+
+        div.addEventListener("click", incrementar)
     </script>
 </body>
 </html>
