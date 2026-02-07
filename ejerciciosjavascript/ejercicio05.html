@@ -1,28 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 5</title>
     <style>
-        .destacado{
-            background-color: yellow;
-        }
+      body {
+        justify-items: center;
+      }
+      .destacado {
+        background-color: yellow;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Ejercicio 5</h1>
     <div id="contenido" class="destacado">
-        <p>Hola, ¿Cómo estás?</p>
+      <p>Hola, ¿Cómo estás?</p>
     </div>
     <script>
-        const miDiv = document.querySelector("#contenido")
-        console.log(miDiv.classList)
-        // classList(Seleccionar todas las clases que tiene el elemento) add(añadir) remove(quitar)
-        miDiv.classList.remove("destacado")
-        console.log(miDiv.classList)
-        miDiv.classList.add("destacado")
-        console.log(miDiv.classList)
+      const miDiv = document.querySelector("#contenido");
+      console.log(miDiv.classList);
+      // classList(Seleccionar todas las clases que tiene el elemento) add(añadir) remove(quitar)
+      miDiv.classList.remove("destacado");
+      console.log(miDiv.classList);
+      miDiv.classList.add("destacado");
+      console.log(miDiv.classList);
     </script>
-</body>
+  </body>
 </html>

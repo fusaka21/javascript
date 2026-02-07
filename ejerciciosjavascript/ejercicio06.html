@@ -1,30 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 6</title>
     <style>
-        #entrada{
-            margin-bottom: 10px;
-        }
+      body {
+        justify-items: center;
+      }
+
+      #entrada {
+        margin-bottom: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Ejercicio 6</h1>
     <form action="">
-        <input type="text" placeholder="Escriu a la consola..." id="entrada">
+      <input type="text" placeholder="Escriu a la consola..." id="entrada" />
     </form>
-    <button id="btn">
-        Enviar
-    </button>
+    <button id="btn">Enviar</button>
     <script>
-        const input = document.querySelector("#entrada")
-        const btn = document.querySelector("#btn")
-        function mostraValor() {
-            console.log(input.value)
-        }
-        // addEventListener(Añadir un receptor de evento, en este caso "click") ,mostraValor(seguido por un coma y dentro del paréntesis pones lo que quieres que suceda después de que ese evento ocurra)
-        btn.addEventListener("click", mostraValor)
+      const input = document.querySelector("#entrada");
+      const btn = document.querySelector("#btn");
+      function mostraValor() {
+        console.log(input.value);
+      }
+      // addEventListener(Añadir un receptor de evento, en este caso "click") ,mostraValor(seguido por un coma y dentro del paréntesis pones lo que quieres que suceda después de que ese evento ocurra)
+      btn.addEventListener("click", mostraValor);
     </script>
-</body>
+  </body>
 </html>

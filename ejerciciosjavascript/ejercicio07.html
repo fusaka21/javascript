@@ -1,35 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 7</title>
     <style>
-        #contenido{
-            border: 1px solid black;
-            border-radius: 10px;
-            background-color: rgb(96, 96, 245);
-            width: 200px;
-            height: 50px;
-            text-align: center;
-            align-content: center;
-        }
+      body {
+        justify-items: center;
+      }
+
+      #contenido {
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: rgb(96, 96, 245);
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        align-content: center;
+      }
     </style>
-</head>
-<body>
-    <div id="contenido">
-        Fes click per començar
-    </div>
+  </head>
+  <body>
+    <h1>Ejercicio 7</h1>
+    <div id="contenido">Fes click per començar</div>
     <script>
-        const div = document.querySelector("#contenido");
-        let contador = 0;
+      const div = document.querySelector("#contenido");
+      let contador = 0;
 
-        function incrementar() {
-            contador = contador + 1;
-            div.innerHTML = "Nº de clicks: " + contador;
-        }
+      function incrementar() {
+        contador = contador + 1;
+        div.innerHTML = "Nº de clicks: " + contador;
+      }
 
-        div.addEventListener("click", incrementar)
+      div.addEventListener("click", incrementar);
     </script>
-</body>
+  </body>
 </html>
