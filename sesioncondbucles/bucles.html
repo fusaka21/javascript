@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales y Bucles</title>
+    <style>
+        .correcto{
+            border: green 5px solid;
+            font-weight: 200px;
+        }
+
+        .incorrecto{
+            border: rgb(255, 0, 0) 5px solid;
+            font-weight: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Condicionales y bucles</h1>
+    <form action="">
+        <input type="number" id="miEdad" placeholder="Escribe tu edad...">
+    </form>
+    <button id="miBoton">Enviar</button>
+    <div id="miDiv">
+
+    </div>
+    <script>
+        console.log("Esta sesión es de bucles y condicionales")
+        let edad = document.querySelector("#miEdad")
+        let miDiv = document.querySelector("#miDiv")
+        let btn = document.querySelector("#miBoton")
+        function comprobarEdad() {
+        if (edad.value >= 18){
+            miDiv.innerHTML=(edad.value)
+            miDiv.classList.add("correcto")
+            miDiv.classList.remove("incorrecto")  
+        } else {
+            
+                miDiv.innerHTML=(edad.value)
+                miDiv.classList.add("incorrecto")
+                miDiv.classList.remove("correcto")
+            }
+        }
+        btn.addEventListener("click", comprobarEdad)
+    </script>
+</body>
+</html>
