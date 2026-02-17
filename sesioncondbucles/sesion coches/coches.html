@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector de coches</title>
+    <style>
+      .imagen {
+        width: 200px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <select name="" id="selector">
+      <option value="bmw">BMW</option>
+      <option value="lam">Lamborghini</option>
+      <option value="aud">Audi</option>
+      <option value="mer">Mercedes</option>
+    </select>
+    <div id="miDiv">
+      <img src="" alt="" id="imagen" class="imagen" />
+    </div>
+    <button id="btn">Ver coche</button>
+    <script>
+      const selector = document.querySelector("#selector");
+      const miDiv = document.querySelector("#miDiv");
+      const imagen = document.querySelector("#imagen");
+      const btn = document.querySelector("#btn");
+      console.log(selector.value);
+
+      function seleccionCoche() {
+        if (selector.value == "bmw") {
+          imagen.src = "images/bmw.jpg";
+        } else if (selector.value == "lam") {
+          imagen.src = "images/lamborghini.jpg";
+        } else if (selector.value == "aud") {
+          imagen.src = "images/audi.jpg";
+        } else if (selector.value == "mer") {
+          imagen.src = "images/mercedes.jpg";
+        }
+      }
+      btn.addEventListener("click", seleccionCoche);
+    </script>
+  </body>
+</html>

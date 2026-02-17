@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegito</title>
+    <style>
+        .cuadrado{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .tablero{
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="tablero" id="tablero">
+      <div class="cuadrado" id="cuadrado"></div>  
+    </div>
+    
+    <script>
+        const cuadrado=document.querySelector("#cuadrado")
+        let posX = 0
+        let posY = 0
+        document.addEventListener("keydown", movimiento)
+        function movimiento() {
+            if (event.key === 'ArrowRight') {
+                posX = posX+5
+                cuadrado.style.left = posX+"px"
+            } else if (event.key === 'ArrowLeft') {
+                posX = posX-5
+                cuadrado.style.left = posX+"px"
+            } else if (event.key === 'ArrowDown') {
+                posY = posY+5
+                cuadrado.style.top = posY+"px"
+            } else if (event.key === 'ArrowUp') {
+                posY = posY-5
+                cuadrado.style.top = posY+"px"
+            }
+
+            if (cuadrado.style.left > "450px") {
+                cuadrado.style.left = "0px"
+            } else if (cuadrado.style.left < "0px"){
+                cuadrado.style.left = "450px"
+            } else if (cuadrado.style.top > "450px"){
+                cuadrado.style.top = "0px"
+            } else if (cuadrado.style.top < "0px"){
+                cuadrado.style.top = "450px"
+            }
+        }
+    </script>
+</body>
+</html>
